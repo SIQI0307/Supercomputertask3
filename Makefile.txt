@@ -1,0 +1,30 @@
+mpiopenmp:
+	g++ -O3 main_3.cpp -std=c++11 -o main_3
+
+submitmain:
+	./submitmain.sh
+
+
+submitOmp:
+	./ompSubmit.sh
+
+
+
+mpiopen40:
+	g++ -O3 -std=c++11 -fopenmp main_3.cpp -o mpiopen40 -I/opt/ibm/spectrum_mpi/include -L/opt/ibm/spectrum_mpi/lib -lmpiprofilesupport -lmpi_ibm -DUSE_MPI
+
+mpiopen80:
+	g++ -O3 -std=c++11 -fopenmp main_3.cpp -o mpiopen80 -I/opt/ibm/spectrum_mpi/include -L/opt/ibm/spectrum_mpi/lib -lmpiprofilesupport -lmpi_ibm -DUSE_MPI
+
+mpiopen160:
+	g++ -O3 -std=c++11 -fopenmp main_3.cpp -o mpiopen160 -I/opt/ibm/spectrum_mpi/include -L/opt/ibm/spectrum_mpi/lib -lmpiprofilesupport -lmpi_ibm -DUSE_MPI
+
+
+MPIOPENMP1:
+	./MPIOPENMP1.sh
+
+MPIOPENMP2:
+	./MPIOPENMP2.sh
+
+MPIOPENMP3:
+	./MPIOPENMP3.sh
